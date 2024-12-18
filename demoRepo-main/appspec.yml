@@ -1,18 +1,18 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
-    destination: /var/www/html/
+  - source: demoRepo-main/index.html
+    destination: demoRepo-main/var/www/html/
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies
+    - location: demoRepo-main/scripts/install_dependencies
       timeout: 300
       runas: root
-    - location: scripts/start_server
+    - location: demoRepo-main/scripts/start_server
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/stop_server
+    - location: demoRepo-main/scripts/stop_server
       timeout: 300
       runas: root
 
